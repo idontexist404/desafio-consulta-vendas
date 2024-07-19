@@ -1,6 +1,6 @@
 package com.devsuperior.dsmeta.dto;
 
-import java.time.LocalDate;
+import com.devsuperior.dsmeta.entities.Sale;
 
 public class SaleSummaryDTO {
     private String sellerName;
@@ -11,6 +11,11 @@ public class SaleSummaryDTO {
         this.amount = amount;
     }
 
+    public SaleSummaryDTO(Sale entity) {
+        sellerName = entity.getSeller().getName();
+        amount = entity.getAmount();
+    }
+
     public String getSellerName() {
         return sellerName;
     }
@@ -19,3 +24,4 @@ public class SaleSummaryDTO {
         return amount;
     }
 }
+
